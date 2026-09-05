@@ -1,75 +1,51 @@
-# Proton for No Raids — Public Modules
+# Proton for No Raids
 
-Public showcase and selected utility modules from **Proton for No Raids**, a Discord security and server-protection project.
+Parte pública do Proton for No Raids, meu projeto de proteção e moderação para servidores do Discord.
 
-> This repository intentionally contains only a **partial public version**. The production anti-raid engine, detection rules, OCR pipeline, AI moderation prompts, database implementation, validation system and other security-sensitive logic remain private.
+O sistema completo não fica neste repositório porque algumas regras de detecção, credenciais e partes de segurança precisam continuar privadas.
 
-## What is included
+## Incluído
 
-- Reusable Discord embed helpers
-- In-memory guild settings cache
-- Safe permission/hierarchy checks
-- Generic security-event models
-- Example integration code
-- Unit tests
-- Architecture and security documentation
+- helpers de embeds;
+- cache simples de configurações por servidor;
+- verificações de permissão e hierarquia;
+- modelos de eventos de segurança;
+- exemplo de integração;
+- testes.
 
-## What is not included
+## Não incluído
 
-- Anti-raid detection engine and thresholds
-- Anti-advertising / anti-sale detection rules
-- OCR and image-analysis pipeline
-- AI moderation providers, prompts and API handling
-- Bot whitelist / bypass logic
-- Automated punitive actions
-- Production database schema and service-role access
-- Server validation / access-control flow
-- Owner/admin internal panels
-- Production credentials or deployment secrets
+- regras e limites do anti-raid;
+- detecção de anúncios e vendas;
+- OCR e análise de imagens;
+- prompts e configuração de moderação por IA;
+- whitelist e bypasses;
+- ações automáticas de punição;
+- banco e credenciais de produção;
+- painéis internos.
 
-## Project structure
+## Estrutura
 
 ```text
-proton-for-no-raids-public/
-├── src/proton_no_raids_public/
-│   ├── __init__.py
-│   ├── embeds.py
-│   ├── permissions.py
-│   ├── security_events.py
-│   └── settings_cache.py
-├── examples/
-│   └── basic_usage.py
-├── tests/
-│   ├── test_security_events.py
-│   └── test_settings_cache.py
-├── docs/
-│   └── ARCHITECTURE.md
-├── .env.example
-├── .gitignore
-├── CHANGELOG.md
-├── LICENSE
-├── SECURITY.md
-└── requirements.txt
+src/proton_no_raids_public/
+  embeds.py
+  permissions.py
+  security_events.py
+  settings_cache.py
+examples/
+tests/
+docs/
 ```
 
-## Install
+## Rodando
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-Run the tests:
-
-```bash
 python -m unittest discover -s tests -v
 ```
 
-## About the production project
+## Segurança
 
-The full Proton for No Raids project is designed around Discord server protection, configurable security modules, logging and automated monitoring. This public repository is intended for portfolio/reference purposes and does **not** contain the complete production bot.
-
-## Security
-
-Never commit `.env`, Discord bot tokens, Supabase service-role keys, API keys or database credentials. See [SECURITY.md](SECURITY.md).
+Nunca coloque `.env`, token de bot, service-role do Supabase ou outras credenciais reais neste repositório. Veja [`SECURITY.md`](SECURITY.md) para mais detalhes.
